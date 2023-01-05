@@ -1,0 +1,33 @@
+.main-menu-animate {
+    position: fixed;
+    width: 400px !important;
+    bottom: -400px;
+    right: -500px;
+    transform: rotate(-17deg);
+    transition: all .5s;
+}
+.main-menu-animate.show {
+    bottom: -60px;
+    right: -80px;
+}
+.main-menu-animate img {
+    width: 400px;
+}
+[data-menu="animation"] {
+    background-color: #38434a;
+}
+[data-menu="animation"] img{
+    width: 200px;
+    position: relative;
+    top: 0px;
+    left: -40%;
+    animation: run linear 2s forwards;
+}
+[data-menu="animation"]  [data-ui="load-progress"] {
+    margin: 10px auto 1em;
+}
+@keyframes run {
+    100% {
+        left: 40%;
+    }
+}

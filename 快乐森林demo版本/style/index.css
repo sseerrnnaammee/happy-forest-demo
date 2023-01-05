@@ -1,0 +1,250 @@
+.login-form-box .login_form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    min-width: 500px;
+    width: 22%;
+    height: 400px;
+    background-color: #fff;
+    border-radius: 11px;
+    padding: 30px;
+    overflow: hidden;
+}
+.login-form-box  .login_form .title_container {
+    position: relative;
+}
+.login-form-box  .login_form .title_container .title .title_welcome {
+    color: rgba(0,0,0,.25);
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 900;
+    text-align: left;
+    margin: 0 0 16px 0;
+}
+.login-form-box  .login_form .title_container .title .title_name {
+    margin: 0 0 30px 0;
+    font-size: 20px;
+    color: #1a1a1a;
+    text-align: left;
+}
+.login-form-box  .login_form .form_fields {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 16px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    -webkit-box-shadow: 0 0 14px 4px hsl(0deg 2% 90% / 50%);
+    box-shadow: 0 0 14px 4px hsl(0deg 2% 90% / 50%);
+    border-radius: 4px 10px 10px 4px;
+}
+
+element.style {
+    top: 0%;
+}
+.login-form-box  .login_form .form_fields i {
+    position: absolute;
+    top: -50%;
+    left: 0;
+    width: 4px;
+    height: 50%;
+    -webkit-transition: top .2s;
+    transition: top .2s;
+    background: #2783fc;
+    border-radius: 14px;
+}
+
+.login-form-box  .login_form .form_fields p {
+    margin: 0;
+    padding: 0;
+    line-height: 32px;
+    height: 32px;
+    font-size: 12px;
+    color: #666;
+    text-align: left;
+}
+.login-form-box .el-form-item {
+    border-radius: 5px;
+    color: #454545;
+}
+.login-form-box input {
+    -webkit-appearance: none;
+    caret-color: rgba(0,0,0,.3);
+    border: 1px solid #fff;
+    color: #000;
+    background: #fff;
+    height: 28px;
+    line-height: 28px;
+    transition: border-color .2s cubic-bezier(.645,.045,.355,1);
+    width: 100%;
+    outline: 0;
+    padding: 0 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+.login-form-box  .login_form .login_btn,.login-form-box  .login_form .regist_btn {
+    width: 130px;
+    height: 40px;
+    background: #2783fc;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    color: #fff;
+    text-align: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 30px auto 10px;
+}
+.login-form-box .account-regist {
+    color: #2783fc;
+    font-size: 14px;
+    cursor: pointer;
+}
+.regist-form-box  .login_form .form_fields >div {
+    display: flex;
+    align-items: center;
+}
+.regist-form-box  .login_form .form_fields >div p{
+    width: 100px;
+}
+.regist-form-box  .login_form .form_fields >div input{
+    flex: 1;
+}
+[data-menu="main"] .logout-box  {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #fff;
+    width: unset;
+}
+[data-menu="main"] .logout-box  span {
+    margin-left: 16px;
+    font-size: 14px;
+}
+[data-menu="main"] .logout-box  span:nth-child(2) {
+   cursor: pointer;
+   color: #1b74a0;
+}
+[data-menu="main"] .logout-box  span:nth-child(2):hover {
+    color: #00acc1;
+}
+[data-menu="waiting"] .middle  img {
+    width: 280px;
+}
+[data-menu="waiting"] .middle  img.toRight {
+    position: absolute;
+    left: 100px;
+    top: 70%;
+    animation: toRight 3s linear forwards;
+}
+[data-menu="waiting"] {
+    background-size: 100% 100% !important;
+}
+[data-menu="waiting"] .middle {
+    height: 100vh;
+}
+[data-menu="waiting"] .middle .zzz {
+    position: absolute;
+    left: 80%;
+    top: 30%;   
+    color: #fff;
+}
+[data-menu="waiting"] .middle .zzz div {
+    position: absolute;
+    left: -30px;
+    top: 0;
+    top: 100px;
+    opacity: 0;
+}
+[data-menu="waiting"] .middle .zzz div:first-child {
+    position: absolute;
+    left: -50px;
+    top: 100px;
+    animation: zAni1 3s  4.5s linear infinite;
+}
+[data-menu="waiting"] .middle .zzz div:nth-child(2) {
+    position: absolute;
+    left: -40px;
+    top: 90px;
+    animation: zAni2 3s 4s linear infinite;
+}
+[data-menu="waiting"] .middle .zzz div:last-child {
+    position: absolute;
+    left: -30px;
+    top: 80px;
+    animation: zAni3 3s 3.5s linear infinite;
+}
+[data-menu="waiting"] .middle  img.toLeft {
+    position: absolute;
+    opacity: 0;
+    left: calc(100% - 300px);
+    animation: toLeft 6s 3s linear infinite;
+}
+@keyframes toRight {
+    0% {
+        opacity: 1;
+    }
+    90% {
+        left: 67%;
+        top: 45%;
+        transform: scale(0.7);
+        opacity: 1;
+    }
+    100% {
+        left: 67%;
+        top: 45%;
+        transform: scale(0.7);
+        opacity: 0;
+    }
+}
+@keyframes toLeft {
+    0% {
+        left: calc(100% - 300px);
+        opacity: 1;
+    }
+    50% {
+        left: 100px;
+        opacity: 1;
+    }
+    51% {
+        left: 100px;
+        opacity: 0;
+    }
+    100% {
+        left: calc(100% - 300px);
+        opacity: 0;
+    }
+}
+@keyframes zAni1 {
+    100% {
+        left: 10px;
+        top: 40px;
+        transform: scale(1.5); 
+        opacity: 1;
+    }
+}
+@keyframes zAni2 {
+    100% {
+        left: 25px;
+        top: 35px;
+        transform: scale(1.5); 
+        opacity: 1;
+    }
+}
+@keyframes zAni3 {
+    100% {
+        left: 40px;
+        top: 20px;
+        transform: scale(1.5); 
+        opacity: 1;
+    }
+}
