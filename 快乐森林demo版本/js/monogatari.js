@@ -547,11 +547,13 @@ $_ready(function () {
 			return false;
 		}
 		let gameProcess = Storage.get("gameProcess");
+		// debugger
 		gameProcess = gameProcess ? JSON.parse(gameProcess) : ''
 		if(gameProcess && gameProcess.endDateStatus){
 			const nextDay = moment(gameProcess.Date).endOf('day').valueOf(); // 获取最新保存时间的最后时间
 			const now = new Date().getTime();
 			if(nextDay > now){
+				playing = false;
 				ShowTip("See you tomorrow~", "info");
 				return;
 			}else {
@@ -791,7 +793,8 @@ $_ready(function () {
 		}
 
 		$_("#game").show();
-		analyseStatement(label[engine.Step]);
+		// analyseStatement(label[engine.Step]);
+		analyseStatement(engine.Step>label.length-1?label[label.length-1]:label[engine.Step]);
 		document.body.style.cursor = "auto";
 	}
 
@@ -989,7 +992,7 @@ $_ready(function () {
 			playing = true;
 			$_("section").hide();
 			$_("#game").show();
-			analyseStatement(label[engine.Step]);
+			analyseStatement(engine.Step>label.length-1?label[label.length-1]:label[engine.Step]);
 		} else {
 			$_("section").hide();
 			$_("[data-menu='main']").show();
@@ -1137,7 +1140,7 @@ $_ready(function () {
 				Storage.set('playerId', userInfo.id);
 				Storage.set("playerName", userInfo.account);
 				Storage.set("gameProcess", userInfo.step);
-				showMainMenu();
+			showMainMenu();
 			}
 		} else {
 			showLogin();
@@ -1877,8 +1880,9 @@ $_ready(function () {
 						flag = false;
 						engine.Step += 1;
 					}
-				}
-				analyseStatement(label[engine.Step]);
+				}	
+				analyseStatement(engine.Step>label.length-1?label[label.length-1]:label[engine.Step]);
+				// analyseStatement(label[engine.Step]);
 			} catch (e) {
 				console.error("An error ocurred while trying to exectute the previous statement.\n" + e);
 			}

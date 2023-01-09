@@ -1,3 +1,11 @@
+@font-face{
+    font-family:'icomoon';
+    src:url('../fonts/icomoon.ttf');
+}
+@font-face{
+    font-family:'zhankukuaileti';
+    src:url('../fonts/zhankukuaileti.ttf');
+}
 .login-form-box .login_form {
     position: absolute;
     top: 50%;
@@ -136,6 +144,9 @@ element.style {
 }
 [data-menu="main"] .logout-box  span:nth-child(2):hover {
     color: #00acc1;
+}
+[data-menu="main"] .title_name{
+	font-family: icomoon;
 }
 [data-menu="waiting"] .middle  img {
     width: 280px;

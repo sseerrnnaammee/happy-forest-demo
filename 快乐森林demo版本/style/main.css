@@ -64,6 +64,7 @@ button:hover {
 }
 .color-white {
 	color: #fff;
+
 }
 /**
  * ===========================
@@ -105,7 +106,7 @@ button {
 
 /* Choice Buttons style */
 [data-ui="choices"] button {
-
+	font-family: zhankukuaileti;
 }
 
 /* Choice Button Style on Hover */
@@ -124,12 +125,13 @@ button {
 
 /* Character Name Style */
 [data-ui="who"] {
+	font-family: icomoon;
 
 }
 
 /* Style for Centered Text */
 [data-ui="centered"] {
-
+	
 }
 
 /* Character Images Styles */

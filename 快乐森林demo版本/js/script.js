@@ -31,7 +31,7 @@ let particles = {
 
 // Define the music used in the game.
 const music = {
-	'Moonlight': 'moonlight.mp3'，
+	'Moonlight': 'moonlight.mp3',
 	'Untangle Intro': 'Untangle1.0_Intro.mp3',
     'Untagle Loop': 'Untangle1.0_loop.mp3'
 };
@@ -59,7 +59,7 @@ const images = {
 // Define the backgrounds for each scene.
 const scenes = {
 	'night': 'hamsterhousenight.png',
-	'fireplace':'fireplace.png'
+	'fireplace':'fireplace.png',
 	'hamsterhouse':'hamsterhouse.png'
 };
 
@@ -74,7 +74,7 @@ const characters = {
 			like: 'like.png',
 			puzzled: 'puzzled.png',
 			sad: 'sad.png',
-			hugging:'hugging.png'
+			hugging:'hugging.png',
 			normal1:'normal.png',
 			normal2:'normal2.png'
 		}
@@ -393,7 +393,7 @@ let script = {
 	'y 啊，我今天还有一些时间可以陪你',
 	'show character y puzzled at right',
 	'y 我可以问你一个问题吗？',
-	'y 今天有没有遇到让你苦恼，沮丧的事呢？'
+	'y 今天有没有遇到让你苦恼，沮丧的事呢？',
 {
 			'Choice': {
 				'Dialog': '今天有没有遇到让你苦恼，沮丧的事呢？',
@@ -543,4 +543,4 @@ let script = {
 	'如果有什么关于网站的反馈，欢迎在BiliBili视频平台搜索快乐森林官方号私信反馈',
 	'再见！'
 	],
-};
+}}
