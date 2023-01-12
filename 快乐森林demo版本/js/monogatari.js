@@ -566,8 +566,6 @@ $_ready(function () {
 					Storage.set("gameProcess", JSON.stringify(gameProcess));
 				})
 			}
-		}else {
-
 		}
 		$_("section").hide();
 		runAnimate();
@@ -1140,7 +1138,10 @@ $_ready(function () {
 				Storage.set('playerId', userInfo.id);
 				Storage.set("playerName", userInfo.account);
 				Storage.set("gameProcess", userInfo.step);
-			showMainMenu();
+				showMainMenu();   
+				if(userInfo.is_admin === 1){
+					$('button[data-action="managerMode"]').show()
+				}	
 			}
 		} else {
 			showLogin();
@@ -1176,6 +1177,8 @@ $_ready(function () {
 			$_("[data-menu='loading']").hide();
 		});
 	}
+
+
 	/**
 	 * ==========================
 	 * Data-Action Event Handlers
@@ -1309,9 +1312,44 @@ $_ready(function () {
 					$_("[data-notice='slot-overwrite']").removeClass("active");
 				}
 				break;
+
+				
+			case "managerMode":
+				$("[data-menu='manager'] .content").empty()
+				const gameScene = Object.keys(game)
+				const days = gameScene.filter(item=>{
+					return item.indexOf('day') === 0 || item === 'Start'
+				})
+				const data = days.map(item=>{
+					return game[item]
+				})
+				let str = '<ul>'
+				data.forEach((item,index)=>{
+					const scene = item[0].split(" ")[1]
+					str+=`<li data-id="${days[index]}" class="list-item">
+						<div data-id="${days[index]}" ><img src='img/scenes/${scenes[scene]}' alt='' data-id="${days[index]}" ></div>
+						<p data-id="${days[index]}" >${days[index]}</p>
+					</li>`
+				})
+				str+='</ul>'
+				$_("[data-menu='manager'] .content").append(str)
+				$_("section").hide();
+				$_("[data-menu='" + $_(this).data("open") + "']").show();
+				break;
 		}
 		return false;
 	});
+	$("[data-menu='manager'] .content").on("click",'.list-item',function(event){
+		event.stopPropagation()
+		const dataId = event.target.getAttribute('data-id')
+		stopAmbient();
+		label = game[dataId];
+		engine.Step = 0;
+		playing = true;
+		$_("section").hide();
+		$_("#game").show();
+		analyseStatement(label[engine.Step]);
+	})
 
 	$_("#game [data-action='back'], #game [data-action='back'] *").click(function (event) {
 		event.stopPropagation();
@@ -2087,16 +2125,7 @@ $_ready(function () {
 								$_("#game").append("<img src='img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
 								engine.CharacterHistory.push("<img src='img/characters/" + directory + "/" + image + "' class='animated " + classes + "' data-character='" + parts[1] + "' data-sprite='" + parts[2] + "'>");
 
-							} else {
-								// show [image] at [position] with [animation]
-								//   0     1     2      3      4        5
-
-								// show [image] with [animation]
-								//   0      1     2       3
-
-								// show [image]
-								//   0      1
-
+							} else {   
 								if (parts[2] == "at") {
 									parts[2] == parts[3];
 								}

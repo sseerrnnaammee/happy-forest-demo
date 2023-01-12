@@ -32,6 +32,7 @@ const strings = {
 		"FullScreen": "Full Screen",
 
 		"Help": "Help",
+		"ManagerMode": "Manager Mode",
 		"Hide": "Hide",
 		"HideButton": "Hide Text.",
 
@@ -93,6 +94,7 @@ const strings = {
 		"FullScreen": "Full Screen",
 
 		"Help": "Help",
+		"ManagerMode": "Manage Mode",
 		"Hide": "Hide",
 		"HideButton": "Hide Text.",
 

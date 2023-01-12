@@ -64,7 +64,10 @@ $_ready(function () {
             Storage.set('playerId', userInfo.id);
             Storage.set("playerName", userInfo.account);
             Storage.set("gameProcess", userInfo.step);
-            showMainMenu();			
+            showMainMenu();	       
+            if(userInfo.is_admin === 1){
+                $('button[data-action="managerMode"]').show()
+            }		
         }
     }
     // 用户注册
